@@ -12,4 +12,14 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
+ *= require jquery.minicolors
  */
+
+.form-group .minicolors-theme-default.minicolors{
+	display: block;
+	.minicolors-input{
+		height: auto;
+		width: 100%;
+	}
+}

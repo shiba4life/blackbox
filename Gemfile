@@ -13,6 +13,10 @@ gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'simple_form'
+gem 'devise'
+gem 'cocoon'
+gem "font-awesome-rails"
+gem 'jquery-minicolors-rails'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_20]

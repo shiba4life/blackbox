@@ -1,0 +1,25 @@
+- item ||= @item
+= simple_form_for(item) do |f|
+  = f.error_notification
+  .row
+    .col-sm-3
+      = f.input :name
+    .col-sm-2.col-xs-6
+      = f.input :price, as: :currency
+    .col-sm-2.col-xs-6
+      = f.input :original_price, as: :currency
+    .col-sm-3
+      = f.input :brand, placeholder: "ex. Burton"
+    .col-sm-2.col-xs-6
+      = f.input :color, input_html: {class: "color-picker"}
+    .col-sm-2.col-xs-6
+      = f.input :age, placeholder: "in years"
+    .col-sm-6
+      = f.input :blemishes, placeholder: "ex. chipped corner"
+    .col-sm-4
+      = f.input :url
+  .form-inputs
+    = f.input :description
+
+  .form-actions
+    = f.submit "Next", class: "btn btn-success btn-lg"

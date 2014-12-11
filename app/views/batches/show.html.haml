@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+	%b Expiration date:
+	= @batch.expiration_date
+%ul
+	- @batch.items.each do |item|
+		%li= render '/items/form', item: item
+
+= link_to 'Edit', edit_batch_path(@batch)
+\|
+= link_to 'Back', batches_path

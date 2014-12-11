@@ -1,0 +1,15 @@
+.jumbotron
+	%h1 Welcome to Corkket
+	%p The easiest way to buy and sell to your neighbors
+	%br
+	%br
+	%br
+	.row
+		.col-xs-6
+			= link_to "#", class: "btn btn-lg btn-success btn-block" do
+				%h3
+					Buy
+		.col-xs-6
+			= link_to new_batch_path, class: "btn btn-lg btn-success btn-block" do
+				%h3
+					Sell
