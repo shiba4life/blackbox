@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206231109) do
+ActiveRecord::Schema.define(version: 20141216034611) do
 
   create_table "batches", force: true do |t|
     t.integer  "user_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20141206231109) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "filepicker_image_urls"
   end
 
   add_index "items", ["batch_id"], name: "index_items_on_batch_id"

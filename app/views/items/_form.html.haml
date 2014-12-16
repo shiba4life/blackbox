@@ -1,4 +1,5 @@
 - item ||= @item
+
 = simple_form_for(item) do |f|
   = f.error_notification
   .row
@@ -20,6 +21,13 @@
       = f.input :url
   .form-inputs
     = f.input :description
-
+  .row
+    .col-sm-3
+      %h1 Images
+      = f.filepicker_field :filepicker_image_urls, class: "form-control", onchange: 'onPhotoupload(event)', multiple: true
+      %br
+  .images
+    = render '/items/images', files: item.filepicker_image_urls unless item.filepicker_image_urls.blank?
+  %br
   .form-actions
     = f.submit "Next", class: "btn btn-success btn-lg"

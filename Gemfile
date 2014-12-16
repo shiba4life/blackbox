@@ -17,6 +17,9 @@ gem 'devise'
 gem 'cocoon'
 gem "font-awesome-rails"
 gem 'jquery-minicolors-rails'
+gem 'filepicker-rails'
+gem 'annotate'
+gem 'figaro'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_20]

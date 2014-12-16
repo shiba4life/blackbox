@@ -20,6 +20,8 @@ module Blackbox
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
 
+    config.filepicker_rails.api_key = ENV["filepicker_api_key"]
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

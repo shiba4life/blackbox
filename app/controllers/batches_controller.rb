@@ -26,6 +26,11 @@ class BatchesController < ApplicationController
     # @batch.item_names.split(',').each do |item|
     #   Item.create!(batch: @batch, name: item)
     # end
+    @batch.items.each do |item|
+      if item.name.blank?
+        item.destroy
+      end
+    end
     respond_to do |format|
       format.html { redirect_to edit_item_path(@batch.items.first)}
     end

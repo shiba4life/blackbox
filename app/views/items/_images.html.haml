@@ -1,0 +1,5 @@
+.row
+	- files.split(',').each do |file|
+		.col-md-1.col-sm-2.col-xs-4
+			= filepicker_image_tag file.strip, w: 100, h: 100, fit: "crop"
+

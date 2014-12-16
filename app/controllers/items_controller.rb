@@ -28,12 +28,29 @@ class ItemsController < ApplicationController
 
   def update
     @item.update(item_params)
-    respond_with(@item)
+    @next = @item.next
+    respond_to do |format|
+      format.html { 
+        if @next.nil?
+          redirect_to batch_path(@item.batch)
+        else
+          redirect_to edit_item_path(@item.next) 
+        end
+      }
+    end
   end
 
   def destroy
     @item.destroy
     respond_with(@item)
+  end
+
+  def preview_images
+    @image_urls = params[:image_urls]
+    puts @image_urls
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
@@ -42,6 +59,6 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:batch_id, :name, :brand, :price, :color, :age, :blemishes, :original_price, :url, :description)
+      params.require(:item).permit(:batch_id, :name, :brand, :price, :color, :age, :blemishes, :original_price, :url, :description, :filepicker_image_urls)
     end
 end

@@ -1,0 +1,1 @@
+$('.images').html("<%= j render '/items/images', files: @image_urls %>")
