@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141216034611) do
+ActiveRecord::Schema.define(version: 20141230194151) do
 
   create_table "batches", force: true do |t|
     t.integer  "user_id"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 20141216034611) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "item_names"
+    t.string   "address"
+    t.float    "lat"
+    t.float    "lng"
   end
 
   add_index "batches", ["user_id"], name: "index_batches_on_user_id"
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 20141216034611) do
     t.string   "brand"
     t.integer  "price"
     t.string   "color"
-    t.integer  "age"
+    t.float    "age"
     t.string   "blemishes"
     t.integer  "original_price"
     t.string   "url"
@@ -37,6 +40,9 @@ ActiveRecord::Schema.define(version: 20141216034611) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "filepicker_image_urls"
+    t.string   "address"
+    t.float    "lat"
+    t.float    "lng"
   end
 
   add_index "items", ["batch_id"], name: "index_items_on_batch_id"
@@ -54,6 +60,7 @@ ActiveRecord::Schema.define(version: 20141216034611) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

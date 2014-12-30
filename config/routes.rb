@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :batches do
   	resources :items
+  	get 'address', on: :member
   end
 
   devise_for :users

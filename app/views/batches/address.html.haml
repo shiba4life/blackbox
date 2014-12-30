@@ -1,0 +1,15 @@
+.row
+	.col-sm-8.col-sm-offset-2
+		%h1 Where are these items located?
+		%p please be as specific as possible, we order items by distance so it's easier to find items nearby.
+		= simple_form_for @batch, role: "form" do |f|
+			
+			= f.hidden_field :lat, id: "address_lat"
+			= f.hidden_field :lng, id: "address_lng"
+			= f.text_field :address, id: "address_picker", class: "form-control"
+			%br
+			%br
+			= f.submit "Next", class: "btn btn-success"
+		%br
+		%br
+		#map

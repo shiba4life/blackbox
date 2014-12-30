@@ -1,0 +1,46 @@
+$background-red: #9b1921;
+$block-red: #ef2a34;
+$red: #ef2a34;
+$error-red: #a94442;
+
+@font-face {
+	font-family: 'KlinicSlabBold';
+	src: font-url('klinicslabbold.otf') format("opentype");;
+}
+
+@font-face {
+	font-family: 'KlinicSlabBook';
+	src: font-url('KlinicSlabBook.otf') format("opentype");;
+}
+
+@font-face {
+	font-family: 'KlinicSlabLight';
+	src: font-url('KlinicSlabLight.otf') format("opentype");;
+}
+
+
+@font-face {
+	font-family: 'KlinicSlabMedium';
+	src: font-url('KlinicSlabMedium.otf') format("opentype");;
+}
+
+@font-face {
+	font-family: 'MavenProLight-200';
+	src: font-url('MavenProLight-200.otf') format("opentype");;
+}
+
+@font-face {
+	font-family: 'MavenProLight-300';
+	src: font-url('MavenProLight-300.otf') format("opentype");;
+}
+
+
+@font-face {
+	font-family: 'CambriaItalic';
+	src: font-url('CambriaItalic.ttf') format("opentype");;
+}
+
+@font-face {
+	font-family: 'HelveticaNeue';
+	src: font-url('HelveticaNeue.dfont') format("opentype");;
+}

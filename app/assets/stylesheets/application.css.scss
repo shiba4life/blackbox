@@ -14,6 +14,8 @@
  *= require_self
  *= require font-awesome
  *= require jquery.minicolors
+ *= require typeahead-rails
+ *= require devise_bootstrap_views
  */
 
 .form-group .minicolors-theme-default.minicolors{

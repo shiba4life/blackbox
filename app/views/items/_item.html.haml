@@ -1,0 +1,14 @@
+%tr
+	%td.item-images
+		- if !item.filepicker_image_urls.blank?
+			- item.filepicker_image_urls.split(',').first(1).each do |image|
+				= filepicker_image_tag image, w: 50, h: 50
+	%td
+		%h4= item.name
+		- if !item.description.blank?
+			%p= item.description
+	%td= item.price
+	%td
+		- if item.batch.user == current_user
+			= link_to "edit", edit_item_path(item)
+			= link_to "remove", item, method: :delete, "data-confirm" => "Are you sure?"

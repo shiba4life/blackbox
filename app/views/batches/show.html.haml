@@ -1,12 +1,7 @@
-%p#notice= notice
-
-%p
-	%b Expiration date:
-	= @batch.expiration_date
-%ul
-	- @batch.items.each do |item|
-		%li= render '/items/form', item: item
-
-= link_to 'Edit', edit_batch_path(@batch)
-\|
-= link_to 'Back', batches_path
+.sequence-section
+	%h1 Your items
+	%table.table
+		= render @batch.items
+	= link_to 'Edit List', edit_batch_path(@batch)
+	%br
+	= link_to "Next", address_batch_path(@batch), class: "btn btn-lg btn-success"

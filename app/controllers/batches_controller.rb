@@ -1,10 +1,12 @@
 class BatchesController < ApplicationController
-  before_action :set_batch, only: [:show, :edit, :update, :destroy]
+  before_action :set_batch, only: [:show, :edit, :update, :destroy, :address]
 
   respond_to :html
 
   def index
-    @batches = Batch.all
+    if current_user
+      @batches = current_user.batches
+    end
     respond_with(@batches)
   end
 
@@ -20,17 +22,13 @@ class BatchesController < ApplicationController
   def edit
   end
 
+  def address
+  end
+
   def create
     @batch = Batch.new(batch_params)
+    session[:batch_id] = @batch.id
     @batch.save
-    # @batch.item_names.split(',').each do |item|
-    #   Item.create!(batch: @batch, name: item)
-    # end
-    @batch.items.each do |item|
-      if item.name.blank?
-        item.destroy
-      end
-    end
     respond_to do |format|
       format.html { redirect_to edit_item_path(@batch.items.first)}
     end
@@ -38,7 +36,13 @@ class BatchesController < ApplicationController
 
   def update
     @batch.update(batch_params)
-    respond_with(@batch)
+    if !@batch.lat.blank? && !@batch.lng.blank?
+      if !current_user
+        redirect_to new_user_registration_path and return
+      end
+    else
+      respond_with(@batch)
+    end
   end
 
   def destroy
@@ -49,9 +53,14 @@ class BatchesController < ApplicationController
   private
     def set_batch
       @batch = Batch.find(params[:id])
+      @batch.items.each do |item|
+        if item.name.blank?
+          item.destroy
+        end
+      end
     end
 
     def batch_params
-      params.require(:batch).permit(:user_id, :expiration_date, :item_names, items_attributes: [:id, :name, :_destroy])
+      params.require(:batch).permit(:user_id, :address, :lat, :lng, :expiration_date, :item_names, items_attributes: [:id, :name, :_destroy])
     end
 end

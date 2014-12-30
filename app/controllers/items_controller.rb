@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.html { 
         if @next.nil?
-          redirect_to batch_path(@item.batch)
+          redirect_to address_batch_path(@item.batch)
         else
           redirect_to edit_item_path(@item.next) 
         end
@@ -41,8 +41,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @batch = @item.batch
     @item.destroy
-    respond_with(@item)
+    respond_with(@batch)
   end
 
   def preview_images

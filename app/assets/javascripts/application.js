@@ -16,4 +16,6 @@
 //= require bootstrap-sprockets
 //= require cocoon
 //= require jquery.minicolors
+//= require typeahead.min
+//= require typeahead-addresspicker
 //= require_tree .

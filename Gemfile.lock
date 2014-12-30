@@ -70,6 +70,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-bootstrap-views (0.0.3)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.2.2)
@@ -253,6 +254,16 @@ GEM
       hitimes
     turbolinks (2.5.2)
       coffee-rails
+    twitter-typeahead-rails (0.10.5)
+      actionpack (>= 3.1)
+      jquery-rails
+      railties (>= 3.1)
+    typeahead-addresspicker-rails (0.0.1)
+      actionpack (>= 3.1)
+      jquery-rails
+      railties (>= 3.1)
+      twitter-typeahead-rails
+    typeahead-rails (0.10.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
@@ -277,6 +288,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise
+  devise-bootstrap-views
   factory_girl_rails
   faker
   figaro
@@ -310,4 +322,6 @@ DEPENDENCIES
   spring-commands-rspec
   sqlite3
   turbolinks
+  typeahead-addresspicker-rails
+  typeahead-rails
   uglifier (>= 1.3.0)

@@ -20,6 +20,9 @@ gem 'jquery-minicolors-rails'
 gem 'filepicker-rails'
 gem 'annotate'
 gem 'figaro'
+gem 'typeahead-rails'
+gem 'typeahead-addresspicker-rails'
+gem 'devise-bootstrap-views'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_20]

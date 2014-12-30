@@ -8,6 +8,9 @@
 #  created_at      :datetime
 #  updated_at      :datetime
 #  item_names      :text
+#  address         :string(255)
+#  lat             :float
+#  lng             :float
 #
 
 require 'rails_helper'

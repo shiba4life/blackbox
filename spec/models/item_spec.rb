@@ -2,19 +2,23 @@
 #
 # Table name: items
 #
-#  id             :integer          not null, primary key
-#  batch_id       :integer
-#  name           :string(255)
-#  brand          :string(255)
-#  price          :integer
-#  color          :string(255)
-#  age            :integer
-#  blemishes      :string(255)
-#  original_price :integer
-#  url            :string(255)
-#  description    :text
-#  created_at     :datetime
-#  updated_at     :datetime
+#  id                    :integer          not null, primary key
+#  batch_id              :integer
+#  name                  :string(255)
+#  brand                 :string(255)
+#  price                 :integer
+#  color                 :string(255)
+#  age                   :integer
+#  blemishes             :string(255)
+#  original_price        :integer
+#  url                   :string(255)
+#  description           :text
+#  created_at            :datetime
+#  updated_at            :datetime
+#  filepicker_image_urls :string(255)
+#  address               :string(255)
+#  lat                   :float
+#  lng                   :float
 #
 
 require 'rails_helper'

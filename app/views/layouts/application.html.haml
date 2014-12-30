@@ -5,6 +5,8 @@
     %title= content_for?(:title) ? yield(:title) : 'Blackbox'
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Blackbox'}"}
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"
+    = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = filepicker_js_include_tag
     = csrf_meta_tags
@@ -14,5 +16,11 @@
     %main{:role => "main"}
       = render 'layouts/messages'
       .container
-        = yield
+        - if params[:controller].include?("devise") || params[:controller] == "registrations"
+          .row
+            .col-lg-4.col-lg-offset-4.col-sm-6.col-sm-offset-3.devise-main-content
+              = render '/layouts/messages'
+              = yield
+        - else
+          = yield
     = debug(params) if Rails.env.development?

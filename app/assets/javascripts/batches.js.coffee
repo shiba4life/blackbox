@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 loadBatch = ->
-	$('#items').on 'change','.batch-item', (e)->
+	$('#items').on 'keydown','.batch-item', (e)->
 		if $('.batch-item').last().val() != ""
 			$('.new-item-btn').click()
 	$('.color-picker').minicolors()

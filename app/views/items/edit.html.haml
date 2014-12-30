@@ -2,3 +2,5 @@
 %p= "Fill out as much info as you'd like.  The more info you give the better chances you have of getting it sold."
 %br
 = render 'form'
+%br
+= link_to "Skip", address_batch_path(@item.batch), class: "btn btn-default btn-lg"
