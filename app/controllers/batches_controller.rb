@@ -27,6 +27,10 @@ class BatchesController < ApplicationController
 
   def create
     @batch = Batch.new(batch_params)
+    clear_blank
+    if @batch.items.count == 0
+      redirect_to new_batch_path, notice: "you need to list something" and return
+    end
     session[:batch_id] = @batch.id
     @batch.save
     respond_to do |format|
@@ -60,6 +64,14 @@ class BatchesController < ApplicationController
   end
 
   private
+    def clear_blank
+      @batch.items.each do |item|
+        if item.name.blank?
+          item.destroy
+        end
+      end
+    end
+
     def set_batch
       @batch = Batch.find(params[:id])
       @batch.items.each do |item|
