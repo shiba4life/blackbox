@@ -30,6 +30,10 @@ class BatchesController < ApplicationController
 
     session[:batch_id] = @batch.id
     @batch.save
+    clear_blank
+    if @batch.items.count == 0
+      redirect_to new_batch_path, notice: "you need to list something" and return
+    end
     respond_to do |format|
       format.html { redirect_to edit_item_path(@batch.items.first)}
     end
