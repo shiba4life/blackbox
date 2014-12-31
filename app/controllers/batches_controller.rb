@@ -27,9 +27,7 @@ class BatchesController < ApplicationController
 
   def create
     @batch = Batch.new(batch_params)
-    if @batch.items.count == 0
-      redirect_to new_batch_path, notice: "you need to list something" and return
-    end
+
     session[:batch_id] = @batch.id
     @batch.save
     respond_to do |format|
