@@ -14,7 +14,7 @@ gem 'haml-rails'
 gem 'high_voltage'
 gem 'simple_form'
 gem 'devise'
-gem 'cocoon', '1.2.3'
+gem 'cocoon'
 gem "font-awesome-rails"
 gem 'jquery-minicolors-rails'
 gem 'filepicker-rails'
