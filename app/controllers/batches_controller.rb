@@ -27,7 +27,6 @@ class BatchesController < ApplicationController
 
   def create
     @batch = Batch.new(batch_params)
-    clear_blank
     if @batch.items.count == 0
       redirect_to new_batch_path, notice: "you need to list something" and return
     end
