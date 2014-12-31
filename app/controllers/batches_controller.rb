@@ -1,5 +1,5 @@
 class BatchesController < ApplicationController
-  before_action :set_batch, only: [:show, :edit, :update, :destroy, :address]
+  before_action :set_batch, only: [:show, :edit, :update, :destroy, :address, :activate]
 
   respond_to :html
 
@@ -39,9 +39,18 @@ class BatchesController < ApplicationController
     if !@batch.lat.blank? && !@batch.lng.blank?
       if !current_user
         redirect_to new_user_registration_path and return
+      else
+        @batch.update(user_id: current_user.id)
+        redirect_to @batch and return
       end
     else
       respond_with(@batch)
+    end
+  end
+
+  def activate
+    @batch.items.each do |item|
+      item.update(status: "active")
     end
   end
 

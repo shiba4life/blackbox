@@ -12,7 +12,9 @@ class RegistrationsController < Devise::RegistrationsController
 
   def redirect_to_batch
     if session[:batch_id]
-      redirect_to Batch.find(session[:batch_id])
+      batch = Batch.find(session[:batch_id])
+      batch.update(user_id: current_user.id)
+      redirect_to batch
     end
   end
 

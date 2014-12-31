@@ -1,5 +1,9 @@
 %h1 My Items
 
 %br
+%ul
+	- @batches.each do |batch|
+		- batch.items.each do |item|
+			%li= item.name
 
 = link_to 'New Batch', new_batch_path

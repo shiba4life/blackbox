@@ -5,3 +5,7 @@
 		.col-sm-4
 			= link_to_remove_association f, tabindex: "-1" do
 				%i.fa.fa-remove.fa-2x
+:coffee
+	items = ["Snowboard", "Laptop", "Lamp", "Desk", "Flatscreen TV", "Coffee Maker"]
+	item = items[Math.floor(Math.random()*items.length)];
+	$('.batch-item').last().attr('placeholder', item)

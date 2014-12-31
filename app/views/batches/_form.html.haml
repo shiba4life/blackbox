@@ -1,5 +1,7 @@
 = simple_form_for(@batch) do |f|
 	#items
+		- if current_user
+			= f.hidden_field :user_id, value: current_user.id
 		= f.simple_fields_for :items do |item|
 			= render 'item_fields', f: item
 		.links

@@ -2,6 +2,7 @@
 	%h1 Your items
 	%table.table
 		= render @batch.items
-	= link_to 'Edit List', edit_batch_path(@batch)
+	= link_to 'Edit List', edit_batch_path(@batch), class: "btn btn-default"
 	%br
-	= link_to "Next", address_batch_path(@batch), class: "btn btn-lg btn-success"
+	%br
+	= link_to "Start Selling!", activate_batch_path(@batch), class: "btn btn-lg btn-success"
