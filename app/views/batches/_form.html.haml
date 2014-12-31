@@ -5,7 +5,7 @@
 		= f.simple_fields_for :items do |item|
 			= render 'item_fields', f: item
 		.links
-			= link_to_add_association 'add item', f, :items, class: "new-item-btn hidden"
+			= link_to_add_association 'add item', f, :items, class: "new-item-btn"
 	= f.submit "Next", class: "btn btn-success btn-lg"
 :coffee
 	$('.new-item-btn').click()
